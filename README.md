@@ -27,7 +27,7 @@
 
 ---
 
-## // Overview
+## Overview
 
 **YT Themes** is an open collection of custom CSS themes for YouTube, designed to work with the [Enhancer for YouTube](https://www.mrfdev.com/enhancer-for-youtube) browser extension.
 
@@ -37,18 +37,18 @@ Every theme covers the same set of components: masthead, sidebar, player, watch 
 
 ---
 
-## ◈ Available Themes
+## Available Themes
 
 | Theme | Palette | File |
 |-------|---------|------|
-| Amethyst | Deep purple — `#0d0618` → `#A855F7` | [`themes/AmethystTheme.css`](./AmethystTheme.css) |
+| Amethyst | Deep purple — `#0d0618` → `#A855F7` | [`themes/AmethystTheme.css`](./themes/AmethystTheme.css) |
 | _(more coming)_ | — | — |
 
-> Want to contribute a theme? See [Contributing](#-contributing) below.
+> Want to contribute a theme? See [Contributing](#contributing) below.
 
 ---
 
-## ▸ What Each Theme Covers
+## What Each Theme Covers
 
 All themes apply consistent styling across these sections:
 
@@ -140,9 +140,9 @@ All themes apply consistent styling across these sections:
 
 ---
 
-## ↓ Installation
+## Installation
 
-**1. Install the extension**
+### 1. Install the extension
 
 | Browser | Link |
 |---------|------|
@@ -150,58 +150,55 @@ All themes apply consistent styling across these sections:
 | Firefox | [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/enhancer-for-youtube/) |
 | Edge | [Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/enhancer-for-youtube/dlgfaleeejmphhnemjgiaekdbonkagkd) |
 
-**2. Get a theme file**
+### 2. Get a theme file
 
 ```bash
 # Clone the whole repo
-git clone https://github.com/YOUR_USERNAME/yt-themes.git
+git clone https://github.com/VacTuzX-dot/Custom-Theme-for-Enhancer-for-YouTube.git
 
 # Or grab a single theme directly
-curl -O https://raw.githubusercontent.com/YOUR_USERNAME/yt-themes/main/themes/amethyst.css
+curl -O https://raw.githubusercontent.com/VacTuzX-dot/Custom-Theme-for-Enhancer-for-YouTube/main/themes/AmethystTheme.css
 ```
 
-**3. Paste into Enhancer**
+### 3. Paste into Enhancer
 
-```
+```text
 Enhancer for YouTube → [ Settings ] → Custom CSS → paste contents → Save
 ```
 
-**4. Reload YouTube** — done.
+### 4. Reload YouTube
+
+Done.
 
 ---
 
-## ~ Customization
+## Customization
 
-Every theme is built around a small set of CSS variables at the top of the file. Fork any theme, swap the values, and you have a completely new palette — no other changes needed.
+Every theme is built around a small set of CSS variables at the top of the file. In the current `AmethystTheme.css`, the core palette looks like this:
 
 ```css
 :root {
-  /* -- base backgrounds -- */
-  --yt-theme-base:    #0d0618;    /* deepest bg */
-  --yt-theme-surface: #2d106080;  /* panels, drawers */
-  --yt-theme-mid:     #4c1d9566;  /* cards, chips */
-
-  /* -- accents -- */
-  --yt-theme-primary: #7C3AED;    /* buttons, borders */
-  --yt-theme-accent:  #A855F7;    /* hover states */
-  --yt-theme-hi:      #C084FC;    /* highlights */
-
-  /* -- text -- */
-  --yt-theme-text:    #ede9fe;    /* text on colored surfaces */
+  --yt-purple-base:    #1a0a2e;
+  --yt-purple-surface: #2d106080;
+  --yt-purple-mid:     #4c1d9566;
+  --yt-purple-primary: #7C3AED;
+  --yt-purple-accent:  #A855F7;
+  --yt-purple-hi:      #C084FC;
+  --yt-purple-text:    #ede9fe;
 }
 ```
 
-Change those 7 values — everything else in the file references these variables. No hunting through hundreds of lines.
+Change those 7 values and you have a new palette. The rest of the stylesheet references them throughout the UI.
 
 ---
 
-## + Contributing
+## Contributing
 
 Contributions are welcome. To add a new theme:
 
 1. Fork this repo
 2. Copy any existing file from `themes/` as a starting point
-3. Rename it to your theme (e.g. `themes/rose.css`)
+3. Rename it to match your theme (e.g. `themes/RoseTheme.css`)
 4. Update the `:root` variables with your palette
 5. Add a row to the **Available Themes** table in this README
 6. Open a pull request
@@ -210,7 +207,7 @@ No strict rules on palette style — dark, light, monochrome, neon, muted, whate
 
 ---
 
-## § Requirements
+## Requirements
 
 - **Enhancer for YouTube** `3.0.17` or later
 - YouTube **dark mode** enabled (Settings → Appearance → Dark theme)
@@ -219,7 +216,7 @@ No strict rules on palette style — dark, light, monochrome, neon, muted, whate
 
 ---
 
-## ! Notes
+## Notes
 
 > **Sidebar auto-hide** — the CSS handles visuals only. The actual hide/show behavior requires the corresponding JavaScript snippet to be enabled inside Enhancer for YouTube's settings separately.
 
@@ -229,9 +226,9 @@ No strict rules on palette style — dark, light, monochrome, neon, muted, whate
 
 ---
 
-## * License
+## License
 
-MIT — use it, fork it, sell it, do whatever. Credit is appreciated but not required.
+This project is licensed under the [MIT License](./LICENSE).
 
 ---
 
