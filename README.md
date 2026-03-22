@@ -41,7 +41,7 @@ Every theme covers the same set of components: masthead, sidebar, player, watch 
 
 | Theme | Palette | File |
 |-------|---------|------|
-| Amethyst | Deep purple — `#0d0618` → `#A855F7` | [`themes/amethyst.css`](./themes/amethyst.css) |
+| Amethyst | Deep purple — `#0d0618` → `#A855F7` | [`themes/amethyst.css`](./AmethystTheme.css) |
 | _(more coming)_ | — | — |
 
 > Want to contribute a theme? See [Contributing](#-contributing) below.
