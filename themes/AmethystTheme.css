@@ -303,13 +303,18 @@ ytd-watch-flexy[fullscreen] #player-theater-container.ytd-watch-flexy {
 
 /* Progress bar tooltip */
 .ytp-tooltip.ytp-bottom,
-.ytp-tooltip-bg,
 a.ytp-next-button.ytp-button {
   border-radius: 8px !important;
   backdrop-filter: blur(12px) !important;
   -webkit-backdrop-filter: blur(12px) !important;
-  background: rgba(45, 16, 96, 0.72) !important;
+  background-color: rgba(45, 16, 96, 0.72) !important;
   border: 1px solid rgba(124, 58, 237, 0.2) !important;
+}
+
+/* Keep YouTube's preview storyboard image intact. */
+.ytp-tooltip-bg {
+  border-radius: 8px !important;
+  overflow: hidden !important;
 }
 
 /* Tooltip layout */
@@ -412,11 +417,6 @@ a.ytp-next-button.ytp-button {
 }
 
 .ytp-small-mode .ytp-progress-bar-container {
-  display: none !important;
-}
-
-/* Video preview hover */
-ytd-video-preview[playing] #thumbnail-container.ytd-video-preview:hover {
   display: none !important;
 }
 
