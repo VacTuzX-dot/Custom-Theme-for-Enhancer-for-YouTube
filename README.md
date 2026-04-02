@@ -44,6 +44,7 @@ Notes:
 
 - This points to the `main` branch, so the theme will automatically update whenever there is a new commit.
 - Note: jsDelivr uses caching, so it may take some time (up to 24h) for updates to reflect automatically.
+  - To force an update immediately, you can visit [this purge link](https://purge.jsdelivr.net/gh/VacTuzX-dot/Custom-Theme-for-Enhancer-for-YouTube@main/themes/AmethystTheme.css) in your browser.
 - If you want a fixed version, replace `@main` with a specific commit hash.
 - If `@import` does not load in your browser, paste the full CSS file instead.
 
