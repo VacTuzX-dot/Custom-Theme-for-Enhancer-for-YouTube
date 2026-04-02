@@ -37,13 +37,14 @@ Custom CSS themes for YouTube, made for [Enhancer for YouTube](https://www.mrfde
 If the full file is too long for the editor, use this:
 
 ```css
-@import url("https://cdn.jsdelivr.net/gh/VacTuzX-dot/Custom-Theme-for-Enhancer-for-YouTube@9b58923/themes/AmethystTheme.css");
+@import url("https://cdn.jsdelivr.net/gh/VacTuzX-dot/Custom-Theme-for-Enhancer-for-YouTube@main/themes/AmethystTheme.css");
 ```
 
 Notes:
 
-- This points to commit `9b58923`, so the theme stays fixed.
-- If you want the latest version, replace `@9b58923` with `@main`.
+- This points to the `main` branch, so the theme will automatically update whenever there is a new commit.
+- Note: jsDelivr uses caching, so it may take some time (up to 24h) for updates to reflect automatically.
+- If you want a fixed version, replace `@main` with a specific commit hash.
 - If `@import` does not load in your browser, paste the full CSS file instead.
 
 ## Customize
