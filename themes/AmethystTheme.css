@@ -186,13 +186,13 @@ tp-yt-app-drawer#guide {
   transition: transform 200ms cubic-bezier(0, 0.8, 0.2, 1) !important;
 }
 
-/* Keep the guide hidden on initial loads/new tabs until YouTube explicitly reveals it. */
-tp-yt-app-drawer#guide[opened]:not([reveal-nav-bar]) #contentContainer.tp-yt-app-drawer {
+/* Sidebar Fix: Toggle based on [opened] attribute instead of [reveal-nav-bar] */
+tp-yt-app-drawer#guide:not([opened]) #contentContainer.tp-yt-app-drawer {
   transform: translateX(-100%) !important;
   pointer-events: none !important;
 }
 
-*[reveal-nav-bar] #contentContainer.tp-yt-app-drawer[opened] {
+tp-yt-app-drawer#guide[opened] #contentContainer.tp-yt-app-drawer {
   transform: translateX(0) !important;
   pointer-events: auto !important;
 }
@@ -208,7 +208,7 @@ div#scrim,
   background: var(--yt-overlay-scrim) !important;
 }
 
-tp-yt-app-drawer#guide[opened][reveal-nav-bar] #scrim.tp-yt-app-drawer {
+tp-yt-app-drawer#guide[opened] #scrim.tp-yt-app-drawer {
   opacity: 1 !important;
   pointer-events: auto !important;
 }
