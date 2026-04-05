@@ -165,13 +165,13 @@ ytd-page-manager.ytd-app {
   margin-left: 0 !important;
 }
 
+/* Hide YouTube's native mini-guide bar — we control sidebar fully via CSS */
+ytd-mini-guide-renderer,
 ytd-mini-guide-renderer.ytd-app,
 ytd-mini-guide-renderer.ytd-app * {
+  display: none !important;
   width: 0 !important;
-}
-
-ytd-mini-guide-renderer.style-scope.ytd-app {
-  display: none;
+  pointer-events: none !important;
 }
 
 tp-yt-app-drawer#guide {
@@ -213,30 +213,49 @@ tp-yt-app-drawer#guide[opened] #scrim.tp-yt-app-drawer {
   pointer-events: auto !important;
 }
 
-/* Sidebar Fix: Homepage — keep sidebar closed by default, allow toggle via [opened] */
-ytd-app[guide-persistent-and-visible] tp-yt-app-drawer#guide {
+/* ── PERSISTENT SIDEBAR (Desktop Home / Browse pages) ───────────────────────
+   YouTube uses [guide-persistent-and-visible] on ytd-app for persistent layout.
+   Toggle clicks add/remove [mini-guide-visible] on ytd-app (NOT [opened] on the drawer).
+   - No [mini-guide-visible]  → Full sidebar visible
+   - [mini-guide-visible]     → Sidebar should be hidden (we collapse it)
+   We also remove margin compensation so content fills the space.
+─────────────────────────────────────────────────────────────────────────── */
+
+/* Full sidebar visible — show normally as overlay-style drawer */
+ytd-app[guide-persistent-and-visible]:not([mini-guide-visible]) tp-yt-app-drawer#guide {
   width: auto !important;
   z-index: 3000 !important;
 }
 
-ytd-app[guide-persistent-and-visible] tp-yt-app-drawer#guide:not([opened]) #contentContainer.tp-yt-app-drawer {
-  transform: translateX(-100%) !important;
-  pointer-events: none !important;
-}
-
-ytd-app[guide-persistent-and-visible] tp-yt-app-drawer#guide[opened] #contentContainer.tp-yt-app-drawer {
+ytd-app[guide-persistent-and-visible]:not([mini-guide-visible]) tp-yt-app-drawer#guide #contentContainer.tp-yt-app-drawer {
   transform: translateX(0) !important;
   pointer-events: auto !important;
 }
 
-ytd-app[guide-persistent-and-visible] tp-yt-app-drawer#guide:not([opened]) #scrim.tp-yt-app-drawer {
+ytd-app[guide-persistent-and-visible]:not([mini-guide-visible]) tp-yt-app-drawer#guide #scrim.tp-yt-app-drawer {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+/* Mini mode — collapse sidebar completely off-screen */
+ytd-app[guide-persistent-and-visible][mini-guide-visible] tp-yt-app-drawer#guide {
+  width: auto !important;
+  z-index: 3000 !important;
+}
+
+ytd-app[guide-persistent-and-visible][mini-guide-visible] tp-yt-app-drawer#guide #contentContainer.tp-yt-app-drawer {
+  transform: translateX(-100%) !important;
+  pointer-events: none !important;
+}
+
+ytd-app[guide-persistent-and-visible][mini-guide-visible] tp-yt-app-drawer#guide #scrim.tp-yt-app-drawer {
   opacity: 0 !important;
   pointer-events: none !important;
 }
 
-ytd-app[guide-persistent-and-visible] tp-yt-app-drawer#guide[opened] #scrim.tp-yt-app-drawer {
-  opacity: 1 !important;
-  pointer-events: auto !important;
+/* Remove extra left margin that YouTube adds for persistent sidebar */
+ytd-app[guide-persistent-and-visible] ytd-page-manager {
+  margin-left: 0 !important;
 }
 
 /* Sidebar panel background */
