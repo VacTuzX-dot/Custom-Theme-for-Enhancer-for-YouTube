@@ -213,28 +213,28 @@ tp-yt-app-drawer#guide[opened] #scrim.tp-yt-app-drawer {
   pointer-events: auto !important;
 }
 
-/* Sidebar Fix: Prevent auto-open on homepage by turning it into a hover-to-open overlay */
+/* Sidebar Fix: Homepage — keep sidebar closed by default, allow toggle via [opened] */
 ytd-app[guide-persistent-and-visible] tp-yt-app-drawer#guide {
-  width: 25px !important;
+  width: auto !important;
   z-index: 3000 !important;
 }
 
-ytd-app[guide-persistent-and-visible] tp-yt-app-drawer#guide:not(:hover) #contentContainer.tp-yt-app-drawer {
+ytd-app[guide-persistent-and-visible] tp-yt-app-drawer#guide:not([opened]) #contentContainer.tp-yt-app-drawer {
   transform: translateX(-100%) !important;
   pointer-events: none !important;
 }
 
-ytd-app[guide-persistent-and-visible] tp-yt-app-drawer#guide:hover #contentContainer.tp-yt-app-drawer {
+ytd-app[guide-persistent-and-visible] tp-yt-app-drawer#guide[opened] #contentContainer.tp-yt-app-drawer {
   transform: translateX(0) !important;
   pointer-events: auto !important;
 }
 
-ytd-app[guide-persistent-and-visible] tp-yt-app-drawer#guide:not(:hover) #scrim.tp-yt-app-drawer {
+ytd-app[guide-persistent-and-visible] tp-yt-app-drawer#guide:not([opened]) #scrim.tp-yt-app-drawer {
   opacity: 0 !important;
   pointer-events: none !important;
 }
 
-ytd-app[guide-persistent-and-visible] tp-yt-app-drawer#guide:hover #scrim.tp-yt-app-drawer {
+ytd-app[guide-persistent-and-visible] tp-yt-app-drawer#guide[opened] #scrim.tp-yt-app-drawer {
   opacity: 1 !important;
   pointer-events: auto !important;
 }
