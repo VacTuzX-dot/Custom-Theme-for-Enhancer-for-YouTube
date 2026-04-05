@@ -40,12 +40,22 @@ If the full file is too long for the editor, use this:
 @import url("https://cdn.jsdelivr.net/gh/VacTuzX-dot/Custom-Theme-for-Enhancer-for-YouTube@main/themes/AmethystTheme.css");
 ```
 
-Notes:
+> **Note:** Do **not** paste this line inside `AmethystTheme.css` itself — that causes an infinite import loop. Paste it only into Enhancer for YouTube's **Custom CSS** box.
 
-- This points to the `main` branch, so the theme will automatically update whenever there is a new commit.
-- Note: jsDelivr uses caching, so it may take some time (up to 24h) for updates to reflect automatically.
-  - To force an update immediately, you can visit [this purge link](https://purge.jsdelivr.net/gh/VacTuzX-dot/Custom-Theme-for-Enhancer-for-YouTube@main/themes/AmethystTheme.css) in your browser.
-- If you want a fixed version, replace `@main` with a specific commit hash.
+### Why updates aren't instant (jsDelivr caching)
+
+jsDelivr caches the `@main` branch for up to **24 hours**. After pushing new commits, the CDN may still serve the old version.
+
+**To force an immediate update after pushing:**
+
+1. Open this URL in your browser:  
+   [`https://purge.jsdelivr.net/gh/VacTuzX-dot/Custom-Theme-for-Enhancer-for-YouTube@main/themes/AmethystTheme.css`](https://purge.jsdelivr.net/gh/VacTuzX-dot/Custom-Theme-for-Enhancer-for-YouTube@main/themes/AmethystTheme.css)
+2. Wait a few seconds for the purge to complete.
+3. Reload YouTube — the new styles will apply immediately.
+
+Other notes:
+
+- If you want a pinned version that never changes, replace `@main` with a specific commit hash.
 - If `@import` does not load in your browser, paste the full CSS file instead.
 
 ## Customize
