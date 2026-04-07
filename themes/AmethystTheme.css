@@ -242,7 +242,7 @@ ytd-app[guide-persistent-and-visible]
   pointer-events: none !important;
 }
 
-/* When opened manually, slide in */
+/* When opened manually (or natively persistent), slide in */
 ytd-app[guide-persistent-and-visible]
   tp-yt-app-drawer#guide[opened]
   #contentContainer.tp-yt-app-drawer {
@@ -250,17 +250,15 @@ ytd-app[guide-persistent-and-visible]
   pointer-events: auto !important;
 }
 
+/* DO NOT show the scrim for the persistent sidebar, so it doesn't block the screen */
 ytd-app[guide-persistent-and-visible]
   tp-yt-app-drawer#guide[opened]
   #scrim.tp-yt-app-drawer {
-  opacity: 1 !important;
-  pointer-events: auto !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
 }
 
-/* Remove extra left margin that YouTube adds for persistent sidebar */
-ytd-app[guide-persistent-and-visible] ytd-page-manager {
-  margin-left: 0 !important;
-}
+/* Allow YouTube to handle the left margin for the persistent sidebar naturally (we removed the margin-left: 0 !important override) */
 
 /* Sidebar panel background */
 #contentContainer.tp-yt-app-drawer[opened] {
